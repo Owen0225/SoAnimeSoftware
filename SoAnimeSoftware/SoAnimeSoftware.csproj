@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0331D6AE-AE78-4464-9194-E7A078B9C58B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SoAnimeSoftware</RootNamespace>
+    <AssemblyName>SoAnimeSoftware</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <LangVersion>8</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DllExportIdent>C7FE8DB8-2F97-4C78-9A90-FE392F468BAC</DllExportIdent>
+    <DllExportMetaLibName>DllExport.dll</DllExportMetaLibName>
+    <DllExportNamespace>SoAnimeSoftware</DllExportNamespace>
+    <DllExportDDNSCecil>true</DllExportDDNSCecil>
+    <DllExportSkipOnAnyCpu>false</DllExportSkipOnAnyCpu>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DllExportOrdinalsBase>1</DllExportOrdinalsBase>
+    <DllExportGenExpLib>false</DllExportGenExpLib>
+    <DllExportOurILAsm>false</DllExportOurILAsm>
+    <DllExportSysObjRebase>false</DllExportSysObjRebase>
+    <DllExportLeaveIntermediateFiles>false</DllExportLeaveIntermediateFiles>
+    <DllExportTimeout>30000</DllExportTimeout>
+    <DllExportPeCheck>2</DllExportPeCheck>
+    <DllExportPatches>0</DllExportPatches>
+    <DllExportPreProcType>0</DllExportPreProcType>
+    <DllExportPostProcType>0</DllExportPostProcType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\DiscordRichPresence.1.0.175\lib\net35\DiscordRPC.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSGO\IGlowObjManager.cs" />
+    <Compile Include="CSGO\EnginePrediction.cs" />
+    <Compile Include="CSGO\Enums.cs" />
+    <Compile Include="CSGO\IClient.cs" />
+    <Compile Include="CSGO\IClientMode.cs" />
+    <Compile Include="CSGO\IDebugOverlay.cs" />
+    <Compile Include="CSGO\IEngine.cs" />
+    <Compile Include="CSGO\ICVar.cs" />
+    <Compile Include="CSGO\IEngineTrace.cs" />
+    <Compile Include="CSGO\IEntityList.cs" />
+    <Compile Include="CSGO\IGameEventManager.cs" />
+    <Compile Include="CSGO\IGameMovement.cs" />
+    <Compile Include="CSGO\IInputSystem.cs" />
+    <Compile Include="CSGO\ILocalize.cs" />
+    <Compile Include="CSGO\IMaterialSystem.cs" />
+    <Compile Include="CSGO\IModelRender.cs" />
+    <Compile Include="CSGO\IMoveHelper.cs" />
+    <Compile Include="CSGO\InterfaceBase.cs" />
+    <Compile Include="CSGO\IPanel.cs" />
+    <Compile Include="CSGO\IPhysicsSurfaceProps.cs" />
+    <Compile Include="CSGO\IPrediction.cs" />
+    <Compile Include="CSGO\IRenderToRTHelper.cs" />
+    <Compile Include="CSGO\IRenderView.cs" />
+    <Compile Include="CSGO\ISound.cs" />
+    <Compile Include="CSGO\ISurface.cs" />
+    <Compile Include="CSGO\IModelInfo.cs" />
+    <Compile Include="CSGO\Structs\CClientState.cs" />
+    <Compile Include="CSGO\Structs\CConVar.cs" />
+    <Compile Include="CSGO\Structs\CGlobalVars.cs" />
+    <Compile Include="CSGO\Structs\CHud.cs" />
+    <Compile Include="CSGO\Structs\CInput.cs" />
+    <Compile Include="CSGO\Structs\CMaterial.cs" />
+    <Compile Include="CSGO\Structs\CMaterialVar.cs" />
+    <Compile Include="CSGO\Structs\CPaintKit.cs" />
+    <Compile Include="CSGO\Structs\CViewSetup.cs" />
+    <Compile Include="CSGO\Structs\Entity.cs" />
+    <Compile Include="CSGO\Structs\GameEvent.cs" />
+    <Compile Include="CSGO\Structs\GlowObjectDefinition.cs" />
+    <Compile Include="CSGO\Structs\CClientNetworkable.cs" />
+    <Compile Include="CSGO\Structs\KeyValue.cs" />
+    <Compile Include="CSGO\Structs\Matrix3x4.cs" />
+    <Compile Include="CSGO\Structs\ModelRenderInfo.cs" />
+    <Compile Include="CSGO\Structs\MoveData.cs" />
+    <Compile Include="CSGO\Structs\MStudio.cs" />
+    <Compile Include="CSGO\Structs\PlayerAnimState.cs" />
+    <Compile Include="CSGO\Structs\PlayerInfo.cs" />
+    <Compile Include="CSGO\IStudioRender.cs" />
+    <Compile Include="CSGO\Structs\Vertex.cs" />
+    <Compile Include="CSGO\Structs\Wchar_t.cs" />
+    <Compile Include="CSGO\Structs\WeaponInfo.cs" />
+    <Compile Include="CSGO\Tier.cs" />
+    <Compile Include="CSGO\SDK.cs" />
+    <Compile Include="CSGO\Structs\ClientClass.cs" />
+    <Compile Include="CSGO\Structs\Char_t.cs" />
+    <Compile Include="CSGO\Structs\CUserCMD.cs" />
+    <Compile Include="CSGO\Structs\RecvProp.cs" />
+    <Compile Include="CSGO\Structs\RecvTable.cs" />
+    <Compile Include="CSGO\Structs\FloatColor.cs" />
+    <Compile Include="CSGO\Structs\ByteColor.cs" />
+    <Compile Include="CSGO\Structs\Vector.cs" />
+    <Compile Include="GUI\AnimeGUI.cs" />
+    <Compile Include="GUI\DrawList.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IDataSource.cs" />
+    <Compile Include="GUI\Elements\Abstraction\ElementBase.cs" />
+    <Compile Include="GUI\Elements\Abstraction\FadingElement.cs" />
+    <Compile Include="GUI\Elements\Abstraction\FadingGameElement.cs" />
+    <Compile Include="GUI\Elements\Abstraction\GameElement.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IAnimated.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IControl.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IFading.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IFilledRect.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IGameSliding.cs" />
+    <Compile Include="GUI\Elements\Abstraction\ILine.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IMoving.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IRenderable.cs" />
+    <Compile Include="GUI\Elements\Abstraction\ISliding.cs" />
+    <Compile Include="GUI\Elements\Abstraction\IText.cs" />
+    <Compile Include="GUI\Elements\Abstraction\RenderableBase.cs" />
+    <Compile Include="GUI\Elements\Abstraction\SlidingFadingElement.cs" />
+    <Compile Include="GUI\Elements\Abstraction\SlidingFadingGameElement.cs" />
+    <Compile Include="GUI\Elements\Abstraction\SlidingGameElement.cs" />
+    <Compile Include="GUI\Elements\FadingGameLine.cs" />
+    <Compile Include="GUI\Elements\FadingGameText.cs" />
+    <Compile Include="GUI\Elements\GameLine.cs" />
+    <Compile Include="GUI\Elements\GameText.cs" />
+    <Compile Include="GUI\Elements\Line.cs" />
+    <Compile Include="GUI\Elements\SlidingFadingFilledRect.cs" />
+    <Compile Include="GUI\Elements\SlidingFadingGameText.cs" />
+    <Compile Include="GUI\Elements\SlidingFadingText.cs" />
+    <Compile Include="GUI\Elements\StringSource.cs" />
+    <Compile Include="GUI\Render.cs" />
+    <Compile Include="GUI\Input.cs" />
+    <Compile Include="GVars.cs" />
+    <Compile Include="Hack\Combat\Aimbot.cs" />
+    <Compile Include="Hack\Combat\Backtrack.cs" />
+    <Compile Include="Hack\Grief\BlockBot.cs" />
+    <Compile Include="Hack\Grief\DoorSpammer.cs" />
+    <Compile Include="Hack\Grief\TeamDamageTracker.cs" />
+    <Compile Include="Hack\Grief\VoteLogger.cs" />
+    <Compile Include="Hack\Hooks.cs" />
+    <Compile Include="Hack\Misc\MovementRecorder\MovementManager.cs" />
+    <Compile Include="Hack\Misc\MovementRecorder\Replays.cs" />
+    <Compile Include="Hack\Misc\MovementRecorder\MovementTick.cs" />
+    <Compile Include="Hack\Misc\MovementRecorder\Record.cs" />
+    <Compile Include="Hack\Misc\VoiceAudioPlayer.cs" />
+    <Compile Include="Hack\Misc\Checks.cs" />
+    <Compile Include="Hack\Misc\Movement.cs" />
+    <Compile Include="Hack\Misc\Other.cs" />
+    <Compile Include="Hack\Offsets.cs" />
+    <Compile Include="Hack\Visuals\Chams.cs" />
+    <Compile Include="Hack\Visuals\ESP.cs" />
+    <Compile Include="Hack\Visuals\Glow.cs" />
+    <Compile Include="Hack\Visuals\Perception.cs" />
+    <Compile Include="Hack\Visuals\SkinChanger.cs" />
+    <Compile Include="Objects\Target.cs" />
+    <Compile Include="GUI\Elements\Text.cs" />
+    <Compile Include="Objects\TargetList.cs" />
+    <Compile Include="Objects\Tick.cs" />
+    <Compile Include="Properties\Assemblies.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assemblies.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\FontResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FontResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\ExtraMath.cs" />
+    <Compile Include="Utils\Log.cs" />
+    <Compile Include="Utils\DebugHelper.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Utils\Memory.cs" />
+    <Compile Include="NotSoDX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NotSoDX.Designer.cs">
+      <DependentUpon>NotSoDX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils\NetVarManager.cs" />
+    <Compile Include="Utils\RawHook.cs" />
+    <Compile Include="WinApi.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Roboto-Medium.ttf" />
+    <None Include="Resources\Roboto-Regular.ttf" />
+    <None Include="Resources\undefeated.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NotSoDX.resx">
+      <DependentUpon>NotSoDX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Assemblies.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Assemblies.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\FontResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FontResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ImportGroup Label=".NET DllExport">
+    <Import Project="$(SolutionDir)packages\DllExport.1.7.4\tools\net.r_eg.DllExport.targets" Condition="Exists($([MSBuild]::Escape('$(SolutionDir)packages\DllExport.1.7.4\tools\net.r_eg.DllExport.targets')))" Label="8337224c9ad9e356" />
+  </ImportGroup>
+  <Target Name="DllExportRestorePkg" BeforeTargets="PrepareForBuild">
+    <Error Condition="!Exists('$(SolutionDir)DllExport.bat')" Text="DllExport.bat is not found. Path: '$(SolutionDir)' - https://github.com/3F/DllExport" />
+    <Exec Condition="('$(DllExportModImported)' != 'true' Or !Exists('$(SolutionDir)packages\DllExport.1.7.4\tools\net.r_eg.DllExport.targets')) And Exists('$(SolutionDir)DllExport.bat')" Command=".\DllExport.bat  -action Restore" WorkingDirectory="$(SolutionDir)" />
+    <MSBuild Condition="'$(DllExportModImported)' != 'true'" Projects="$(SolutionDir)packages\DllExport.1.7.4\tools\net.r_eg.DllExport.targets" Targets="DllExportMetaXBaseTarget" Properties="TargetFramework=$(TargetFramework)">
+      <Output TaskParameter="TargetOutputs" PropertyName="DllExportMetaXBase" />
+    </MSBuild>
+    <ItemGroup>
+      <Reference Include="DllExport, PublicKeyToken=8337224c9ad9e356">
+        <HintPath>$(SolutionDir)packages\DllExport.1.7.4\gcache\$(DllExportMetaXBase)\$(DllExportNamespace)\$(DllExportMetaLibName)</HintPath>
+        <Private>False</Private>
+        <SpecificVersion>False</SpecificVersion>
+      </Reference>
+    </ItemGroup>
+  </Target>
+  <Target Name="DllExportRPkgDynamicImport" BeforeTargets="PostBuildEvent" DependsOnTargets="GetFrameworkPaths" Condition="'$(DllExportModImported)' != 'true' And '$(DllExportRPkgDyn)' != 'false'">
+    <MSBuild BuildInParallel="true" UseResultsCache="true" Projects="$(MSBuildProjectFullPath)" Properties="DllExportRPkgDyn=true" Targets="Build" />
+  </Target>
+</Project>
