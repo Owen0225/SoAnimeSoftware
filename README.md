@@ -36,6 +36,7 @@ Attention, most of the functions have so far been implemented as an example. Som
 		+ Clip (Shift+E)
 		+ Record (TAB+E)
 		+ Stop recording or playing (TAB+E)
+		+ Edit active record (+/-) add/remove tick. (Enter) save.
 	+ Discord RPC
 	+ Bomd timer with bomb damage
 	+ Bunny hop
@@ -59,6 +60,8 @@ Attention, most of the functions have so far been implemented as an example. Som
 	+ Team damage tracker (TAB)
 	+ Blockbot (ALT)
 	+ Doorspammer (CAPS)
+	
+Clips and voice subfolder: `C:\SoAnimeSoftware\`
 
 ## Contribution
 
