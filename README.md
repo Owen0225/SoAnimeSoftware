@@ -76,3 +76,11 @@ Press **Inject** button.
 
 ## Contributed to project
 + [EasyHax](https://github.com/EasyHax "EasyHax")
+
+## Screenshots
+
+> Game screenshot
+![](https://github.com/sagirilover/SoAnimeSoftware/blob/main/Screenshots/main.jpg?raw=true)
+
+> Discord RPC
+![](https://github.com/sagirilover/SoAnimeSoftware/blob/main/Screenshots/rpc.jpg?raw=true)
