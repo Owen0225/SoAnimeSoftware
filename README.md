@@ -24,6 +24,7 @@ Attention, most of the functions have so far been implemented as an example. Som
 		+ Clip
 		+ Record
 	+ Discord RPC
+	+ Bomd timer with bomb damage.
 	+ Bunny hop
 	+ Edgebug assist (slowdown jumpbug)
 	+ Edgejump
