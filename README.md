@@ -6,8 +6,6 @@ This is a community project. It is understood that the community will help impro
 
 ## Table of contents
 
-- [SoAnimeSoftware](#soanimesoftware)
-- [Content](#content)
 - [Features](#features)
 - [Contribution](#contribution)
 - [For devs](#for-devs)
