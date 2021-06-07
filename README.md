@@ -2,8 +2,9 @@
 
 C# Internal cheat for Counter-Strike: Global Offensive. You can use this as base for educational purposes.
 
-This is a community project. It is understood that the community will help improve and complete this project starting from its publication. Feel free to become a contributor if you have ideas and can implement them. [Discord server](https://discord.gg/Hww4wW4yVV "Discord server") has been created for coordination and discussion (no one here will create and distribute binaries for you, do not think to go here for this).
-UC Thread: [(https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html)](https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html "(https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html)") 
+This is a community project. It is understood that the community will help improve and complete this project starting from its publication. Feel free to become a contributor if you have ideas and can implement them. [Discord server](https://discord.gg/Hww4wW4yVV "Discord server") has been created for coordination and discussion (no one here will create and distribute binaries for you, do not think to go here for this).  
+
+UC Thread: [https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html](https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html "https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html")
 
 ## Table of contents
 
