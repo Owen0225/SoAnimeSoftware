@@ -3,6 +3,7 @@
 C# Internal cheat for Counter-Strike: Global Offensive. You can use this as base for educational purposes.
 
 This is a community project. It is understood that the community will help improve and complete this project starting from its publication. Feel free to become a contributor if you have ideas and can implement them. [Discord server](https://discord.gg/Hww4wW4yVV "Discord server") has been created for coordination and discussion (no one here will create and distribute binaries for you, do not think to go here for this).
+UC Thread: [(https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html)](https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html "(https://www.unknowncheats.me/forum/cs-go-releases/456069-soanimesoftware-internal-cheat.html)") 
 
 ## Table of contents
 
@@ -30,14 +31,15 @@ Attention, most of the functions have so far been implemented as an example. Som
 	+ Skin coloring [(showcase)](https://www.youtube.com/watch?v=jY6xnzaMk-c&ab_channel=yamadabestgirl "(showcase)")
 + Misc
 	+ Movement recorder [(showcase)](https://www.youtube.com/watch?v=BEB8RJT0Ed0 "(showcase)")
-		+ Play (silent and normal moves)
-		+ Clip
-		+ Record
+		+ Play (silent and normal moves) (E)
+		+ Clip (Shift+E)
+		+ Record (TAB+E)
+		+ Stop recording or playing (TAB+E)
 	+ Discord RPC
-	+ Bomd timer with bomb damage.
+	+ Bomd timer with bomb damage
 	+ Bunny hop
-	+ Edgebug assist (slowdown jumpbug)
-	+ Edgejump
+	+ Edgebug assist (slowdown jumpbug) (X)
+	+ Edgejump (E)
 	+ Grenade prediction
 	+ Fast stop
 	+ Fast crouch
@@ -53,9 +55,9 @@ Attention, most of the functions have so far been implemented as an example. Som
     + Namechanger
 	+ No messages/cooldown name changing exploit
 + Grief
-	+ Team damage tracker
-	+ Blockbot
-	+ Doorspammer
+	+ Team damage tracker (TAB)
+	+ Blockbot (ALT)
+	+ Doorspammer (CAPS)
 
 ## Contribution
 
