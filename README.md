@@ -59,14 +59,14 @@ We welcome any help, but there is something that needs to be done first. A small
 
 The code contains a lot of garbage and bad practices, even the code-style changes very often. This will have to change over time, you can also take part in putting things in order.
 
-#### Building
+### Building
 
 Better use the latest version of Visual Studio 2019.  
 Clone repository and open project to restore NuGet packages.  
 Open **DllExport.bat** and click **Apply**.  
 Reload project select **Any CPU** property and build.  
 
-#### Injecting
+### Injecting
 
 Build and open **Hyper Useful Injector**.  
 Select **csgo** process.  
