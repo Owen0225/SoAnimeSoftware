@@ -292,59 +292,5 @@ namespace SoAnimeSoftware.Hack.Misc
 
         public static CConVar* sv_accelerate;
         public static CConVar* sv_maxspeed;
-
-        public static void ReduceSpeed(CUserCmd* cmd, float newSpeed)
-        {
-            var velocity = SDK.g_LocalPlayer()->m_vecVelocity;
-            velocity.Z = 0;
-            float speed = velocity.Length2D;
-
-            if (newSpeed >= speed)
-                return;
-
-            float acceleration = sv_accelerate->GetFloat();
-            float maxspeed = sv_maxspeed->GetFloat();
-            float surface_friction = SDK.g_LocalPlayer()->Get<float>(0x3210);
-            float max_accel_speed = acceleration * SDK.GlobalVars->interval_per_tick * maxspeed * surface_friction;
-
-            float wishspeed = 0f;
-
-            if (speed - max_accel_speed <= -1f)
-            {
-                wishspeed = max_accel_speed / (speed / (acceleration * SDK.GlobalVars->interval_per_tick));
-            }
-            else
-            {
-                wishspeed = max_accel_speed;
-            }
-
-
-            velocity *= -1;
-            var resistance = velocity.ToAngle();
-
-            resistance.Y = cmd->m_vecViewAngles.Y - resistance.Y;
-
-            var resistance_vec = resistance.ToVector();
-
-            cmd->m_flForwardmove = ExtraMath.Clamp(resistance_vec.X * wishspeed, 0.0f, 450.0f);
-            cmd->m_flSidemove = ExtraMath.Clamp(resistance_vec.Y * wishspeed, 0.0f, 450.0f);
-        }
-
-        public static void ReduceSpeed2(CUserCmd* cmd, float newSpeed)
-        {
-            var velocity = SDK.g_LocalPlayer()->m_vecVelocity;
-            float speed = velocity.Length2D;
-            if (speed <= newSpeed)
-                return;
-
-            var direction = velocity.ToAngle();
-
-            direction.Y = cmd->m_vecViewAngles.Y - direction.Y;
-
-            Vector negated_direction = direction.ToVector() * -speed;
-
-            cmd->m_flForwardmove = negated_direction.X;
-            cmd->m_flSidemove = negated_direction.Y;
-        }
     }
 }

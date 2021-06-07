@@ -9,7 +9,7 @@ namespace SoAnimeSoftware.Utils
     {
         public static IntPtr ReadPointer(IntPtr address)
         {
-            return Marshal.ReadIntPtr(address);
+            return *(IntPtr*) address;
         }
 
         public static byte[] ReadBytes(IntPtr address, int length)
@@ -17,11 +17,6 @@ namespace SoAnimeSoftware.Utils
             byte[] buff = new byte[length];
             Marshal.Copy(address, buff, 0, length);
             return buff;
-        }
-
-        public static T Read<T>(IntPtr address)
-        {
-            return (T) Marshal.PtrToStructure(address, typeof(T));
         }
 
         public static void WriteBytes(IntPtr address, byte[] bytes)
