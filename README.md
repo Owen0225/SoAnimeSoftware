@@ -1,4 +1,4 @@
-### SoAnimeSoftware
+## SoAnimeSoftware
 
 C# Internal cheat for Counter-Strike: Global Offensive. You can use this as base for educational purposes.
 
