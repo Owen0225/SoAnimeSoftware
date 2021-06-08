@@ -292,7 +292,7 @@ namespace SoAnimeSoftware.CSGO.Structs
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         public delegate byte IsWeaponDlg(Entity* ptr);
 
-        public bool isWeapon()
+        public bool IsWeapon()
         {
             fixed (Entity* ptr = &this)
             {
@@ -559,7 +559,7 @@ namespace SoAnimeSoftware.CSGO.Structs
             return m_vecOrigin + m_vecViewOffset;
         }
 
-        public bool isEnemy()
+        public bool IsEnemy()
         {
             return m_iTeamNum != SDK.g_LocalPlayer()->m_iTeamNum;
         }

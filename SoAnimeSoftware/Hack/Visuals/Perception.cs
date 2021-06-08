@@ -293,6 +293,8 @@ namespace SoAnimeSoftware.Hack.Visuals
 
         public static void DisablePostprocessing(EFrameStage stage)
         {
+            return; // it breaks light
+            
             if (stage != EFrameStage.RENDER_START && stage != EFrameStage.RENDER_END)
                 return;
 

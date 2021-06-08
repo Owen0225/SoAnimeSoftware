@@ -103,7 +103,7 @@ namespace SoAnimeSoftware.Hack.Visuals
                         return;
                     }
 
-                    if (e->isEnemy())
+                    if (e->IsEnemy())
                     {
                         if (!Settings.enemyChams)
                         {

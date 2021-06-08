@@ -308,7 +308,7 @@ namespace SoAnimeSoftware.Hack.Combat
                     continue;
                 if (!e->IsAlive())
                     continue;
-                if (!Settings.aimbotFF && !e->isEnemy())
+                if (!Settings.aimbotFF && !e->IsEnemy())
                     continue;
                 if (Settings.visibleOnly && !e->IsVisible())
                     continue;

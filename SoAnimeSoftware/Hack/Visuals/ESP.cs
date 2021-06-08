@@ -10,7 +10,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SoAnimeSoftware.GUI;
 using SoAnimeSoftware.Hack.Misc.MovementRecorder;
+using SoAnimeSoftware.Objects;
 using SoAnimeSoftware.Utils;
 
 namespace SoAnimeSoftware.Hack.Visuals
@@ -20,20 +22,8 @@ namespace SoAnimeSoftware.Hack.Visuals
         public static readonly Box[] PlayerBoxes = new Box[128];
         public static List<Box> WeaponBoxes = new List<Box>();
 
-        public static void Render()
+        public static void Draw()
         {
-            Perception.DamageOverlay();
-            try
-            {
-                Perception.TeamDamageOverlay();
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString());
-            }
-
-            MovementManager.Draw();
-
             if (!Settings.esp)
                 return;
 
@@ -49,10 +39,18 @@ namespace SoAnimeSoftware.Hack.Visuals
                 switch (classId)
                 {
                     case EClassId.CCSPlayer:
+
+                        if (e == SDK.g_LocalPlayer())
+                            continue;
+
+                        if (e->IsDormant() || !e->IsAlive())
+                            continue;
+
                         PlayerEsp(i, e);
+                        BacktrackBox(i, e);
                         break;
                     default:
-                        if (e->isWeapon())
+                        if (e->IsWeapon())
                             if (e->m_hOwnerEntity == -1)
                                 WeaponEsp(i, e);
                         break;
@@ -60,30 +58,53 @@ namespace SoAnimeSoftware.Hack.Visuals
             }
         }
 
+        public static void BacktrackBox(int index, Entity* e)
+        {
+            if (!Settings.backtrack || !Settings.backTrackLT)
+                return;
+
+            if (e->IsDormant() || !e->IsAlive())
+                return;
+
+            if (index < 0 || index >= TargetList.Targets.Length || TargetList.Targets[index] == null)
+                return;
+
+            var target = TargetList.Targets[index];
+            if (!target.Valid)
+                return;
+
+            if (target.Ticks.First == null)
+                return;
+
+            var pos = ExtraMath.GetBonePosition(target.Ticks.First.Value.Matrix, 8);
+
+            Vector dst = new Vector();
+
+            if (ExtraMath.WorldToScreen(pos, ref dst))
+            {
+                var color = e->IsEnemy() ? Settings.enemyEsp : Settings.teamEsp;
+                var oColor = Settings.outlineEsp;
+                SDK.Surface.SetDrawColor(color);
+                SDK.Surface.DrawOutlinedRect(dst.X - 4, dst.Y - 4, dst.X + 4, dst.Y + 4);
+                SDK.Surface.SetDrawColor(oColor);
+                SDK.Surface.DrawOutlinedRect(dst.X - 3, dst.Y - 3, dst.X + 3, dst.Y + 3);
+                SDK.Surface.DrawOutlinedRect(dst.X - 5, dst.Y - 5, dst.X + 5, dst.Y + 5);
+            }
+        }
 
         public static void PlayerEsp(int i, Entity* e)
         {
             if (!Settings.boxes)
                 return;
 
-            if (e == CSGO.SDK.g_LocalPlayer())
-                return;
-
-            if (!e->IsAlive())
-                return;
-
-            //var box = new Box();
-            //box.Calc(e);
-
             PlayerBoxes[i].Calc(e);
 
-            if (e->isEnemy())
+            if (e->IsEnemy())
                 PlayerBoxes[i].Draw(Settings.enemyEsp, Settings.outlineEsp);
             else if (Settings.teamEspEnabled)
                 PlayerBoxes[i].Draw(Settings.teamEsp, Settings.outlineEsp);
             else
                 return;
-
 
             var name = e->PlayerInfo().szName.ToString();
             var health = e->m_iHealth;

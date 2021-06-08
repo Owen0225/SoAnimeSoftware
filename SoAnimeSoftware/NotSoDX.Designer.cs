@@ -45,6 +45,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.fovTrackBar = new System.Windows.Forms.TrackBar();
             this.visualsPage = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.teamGlowCheckBox = new System.Windows.Forms.CheckBox();
             this.teamEspCheckBox = new System.Windows.Forms.CheckBox();
             this.visualFovLabel = new System.Windows.Forms.Label();
@@ -327,6 +328,7 @@
             // visualsPage
             // 
             this.visualsPage.BackColor = System.Drawing.Color.White;
+            this.visualsPage.Controls.Add(this.checkBox1);
             this.visualsPage.Controls.Add(this.teamGlowCheckBox);
             this.visualsPage.Controls.Add(this.teamEspCheckBox);
             this.visualsPage.Controls.Add(this.visualFovLabel);
@@ -363,6 +365,16 @@
             this.visualsPage.Size = new System.Drawing.Size(756, 448);
             this.visualsPage.TabIndex = 0;
             this.visualsPage.Text = "Visuals";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(19, 149);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(104, 24);
+            this.checkBox1.TabIndex = 60;
+            this.checkBox1.Text = "Backtrack";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // teamGlowCheckBox
             // 
@@ -1303,6 +1315,8 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.CheckBox checkBox1;
 
         private System.Windows.Forms.Label label10;
 

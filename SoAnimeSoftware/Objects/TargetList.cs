@@ -15,7 +15,7 @@ namespace SoAnimeSoftware.Objects
             {
                 var e = CSGO.SDK.EntityList.GetEntityByIndex(i);
                 if (e == null || e->IsDormant() || !e->IsAlive() || e->m_bGunGameImmunity ||
-                    (!e->isEnemy() && !Settings.aimbotFF))
+                    (!e->IsEnemy() && !Settings.aimbotFF))
                 {
                     Targets[i].Clear();
                 }

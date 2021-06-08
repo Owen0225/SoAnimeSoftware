@@ -36,7 +36,7 @@ namespace SoAnimeSoftware.Hack.Grief
                 if (e->GetInt("attacker") == 0)
                     return;
 
-                if (attacker->isEnemy() || target->isEnemy())
+                if (attacker->IsEnemy() || target->IsEnemy())
                     return;
 
                 var targetInfo = target->PlayerInfo();
@@ -53,7 +53,7 @@ namespace SoAnimeSoftware.Hack.Grief
                         : e->GetInt("dmg_health");
                 }
 
-                if (attacker == SDK.g_LocalPlayer() && !target->isEnemy())
+                if (attacker == SDK.g_LocalPlayer() && !target->IsEnemy())
                 {
                     if (e->GetInt("health") != 0)
                     {
@@ -82,7 +82,7 @@ namespace SoAnimeSoftware.Hack.Grief
                 if (e->GetInt("attacker") == 0)
                     return;
 
-                if (attacker->isEnemy() || target->isEnemy())
+                if (attacker->IsEnemy() || target->IsEnemy())
                     return;
 
                 var attackerSteam = attacker->PlayerInfo().xuidLow;
@@ -96,7 +96,7 @@ namespace SoAnimeSoftware.Hack.Grief
                     ? damage + PlayersHealth[e->GetInt("userid")]
                     : PlayersHealth[e->GetInt("userid")];
 
-                if (attacker == SDK.g_LocalPlayer() && !target->isEnemy())
+                if (attacker == SDK.g_LocalPlayer() && !target->IsEnemy())
                 {
                     CSGO.SDK.Engine.ClientCmd_Unrestricted(@"play buttons\button8", 0);
                     GVars.TeamKills += 1;
@@ -219,7 +219,7 @@ namespace SoAnimeSoftware.Hack.Grief
                 if (e == null)
                     continue;
 
-                if (e->isEnemy())
+                if (e->IsEnemy())
                     continue;
 
                 var info = e->PlayerInfo();

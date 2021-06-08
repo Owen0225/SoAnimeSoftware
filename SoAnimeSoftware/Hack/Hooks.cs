@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
 using SoAnimeSoftware.CSGO;
 using SoAnimeSoftware.CSGO.Structs;
@@ -283,6 +284,8 @@ namespace SoAnimeSoftware.Hack
                 {
                     Log.Error(ex.ToString());
                 }
+                
+                
 
                 Movement.JumpBug(cmd);
 
@@ -393,7 +396,7 @@ namespace SoAnimeSoftware.Hack
 
                     if (CSGO.SDK.Engine.IsInGame())
                     {
-                        Visuals.Esp.Render();
+                        Visuals.Esp.Draw();
                         Visuals.Perception.DamageOverlay();
                         Visuals.Perception.TeamDamageOverlay();
                         Visuals.Perception.MovementRecorderPoints();

@@ -363,10 +363,6 @@ namespace SoAnimeSoftware
 
         private void testConfigButton_Click(object sender, EventArgs e)
         {
-            Settings.skinChanger = true;
-            Hack.Visuals.SkinChanger.ForceFullupdate();
-            Thread.Sleep(500);
-            
             SDK.CVar.Force("cl_righthand", 0);
             
             Settings.worldColor = new FloatColor(Color.FromArgb(255, 128, 128, 255));
@@ -420,13 +416,15 @@ namespace SoAnimeSoftware
             Settings.jumpBug = true;
             Settings.thirdPerson = true;
             Settings.backtrack = true;
+            Settings.backTrackLT = true;
 
             Settings.voiceEvents = false;
             
             Hack.Visuals.Perception.CircleOpacity = 255;
 
             Hack.Misc.Checks.needUpdate = true;
-            
+            Settings.skinChanger = true;
+            Hack.Visuals.SkinChanger.ForceFullupdate();
         }
 
         private void spectatorListCheckBox_CheckedChanged(object sender, EventArgs e)
@@ -607,6 +605,11 @@ namespace SoAnimeSoftware
         private void hitboxList_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             Settings.bones[e.Index] = e.NewValue == CheckState.Checked;
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Settings.backTrackLT = checkBox1.Checked;
         }
     }
 }

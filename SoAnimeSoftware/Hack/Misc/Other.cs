@@ -271,7 +271,7 @@ namespace SoAnimeSoftware.Hack.Misc
 
             var ent = SDK.EntityList.GetEntityByIndex(e->GetInt("entityid"));
 
-            if (ent == null || ent->isEnemy())
+            if (ent == null || ent->IsEnemy())
                 return;
 
             if (voted == 0)

@@ -392,6 +392,11 @@ namespace SoAnimeSoftware.CSGO
             return _SetFontGlyphSet(Address, font, Encoding.UTF8.GetBytes(fontName), tall, weight, blur, scanlines,
                 flags, rangeMin, rangeMax);
         }
+
+        public void DrawOutlinedRect(float x0, float y0, float x1, float y1)
+        {
+            DrawOutlinedRect((int)x0, (int)y0,(int)x1,(int)y1);
+        }
     }
 
     public enum AlignStyle
