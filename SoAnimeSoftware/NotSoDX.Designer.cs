@@ -258,9 +258,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(15, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(43, 13);
+            this.label7.Size = new System.Drawing.Size(38, 13);
             this.label7.TabIndex = 51;
-            this.label7.Text = "Smooth";
+            this.label7.Text = "Speed";
             // 
             // smoothTrackBar
             // 
