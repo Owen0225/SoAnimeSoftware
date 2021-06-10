@@ -199,6 +199,7 @@
     <Compile Include="Hack\Misc\Checks.cs" />
     <Compile Include="Hack\Misc\Movement.cs" />
     <Compile Include="Hack\Misc\Other.cs" />
+    <Compile Include="Hack\NetVarManager.cs" />
     <Compile Include="Hack\Offsets.cs" />
     <Compile Include="Hack\Visuals\Chams.cs" />
     <Compile Include="Hack\Visuals\ESP.cs" />
@@ -237,7 +238,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
-    <Compile Include="Utils\NetVarManager.cs" />
     <Compile Include="Utils\RawHook.cs" />
     <Compile Include="WinApi.cs" />
   </ItemGroup>

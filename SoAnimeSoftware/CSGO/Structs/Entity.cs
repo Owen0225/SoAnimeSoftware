@@ -468,7 +468,7 @@ namespace SoAnimeSoftware.CSGO.Structs
                 if (ptr->IsReloading())
                     return false;
 
-                if (ptr->m_flNextPrimaryAttack > SDK.GlobalVars->servertime(null))
+                if (ptr->m_flNextPrimaryAttack > SDK.GlobalVars->ServerTime(null))
                     return false;
 
                 if (ptr->m_iClip1 <= 0)

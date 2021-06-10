@@ -26,74 +26,27 @@ namespace SoAnimeSoftware.CSGO.Structs
     [Serializable]
     public struct CUserCmd
     {
-        public int pVft;
-        public int m_iCmdNumber;
-        public int m_iTickCount;
-        public Vector m_vecViewAngles;
-        public Vector m_vecAimDirection;
-        public float m_flForwardmove;
-        public float m_flSidemove;
-        public float m_flUpmove;
-        public int m_iButtons;
-        public int m_bImpulse;
-        public int m_iWeaponSelect;
-        public int m_iWeaponSubtype;
-        public int m_iRandomSeed;
-        public short m_siMouseDx;
-        public short m_siMouseDy;
+        public int pVft; //0
+        public int m_iCmdNumber; //4
+        public int m_iTickCount; //8
+        public Vector m_vecViewAngles; //12
+        public Vector m_vecAimDirection; //24
+        public float m_flForwardmove; //36
+        public float m_flSidemove; //40
+        public float m_flUpmove; //44
+        public int m_iButtons; //48
+        public int m_bImpulse; // 52
+        public int m_iWeaponSelect; //56 
+        public int m_iWeaponSubtype; //60
+        public int m_iRandomSeed; //64
+        public short m_siMouseDx; // 68
+        public short m_siMouseDy; // 70
         public byte _m_bHasBeenPredicted;
 
         public bool m_bHasBeenPredicted()
         {
             return _m_bHasBeenPredicted != 0;
         }
-
-        public bool Attack
-        {
-            get => (m_iButtons & (int) EButtonState.IN_ATTACK) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_ATTACK;
-        }
-
-        public bool Attack2
-        {
-            get => (m_iButtons & (int) EButtonState.IN_ATTACK2) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_ATTACK2;
-        }
-
-        public bool Jump
-        {
-            get => (m_iButtons & (int) EButtonState.IN_JUMP) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_JUMP;
-        }
-
-        public bool Duck
-        {
-            get => (m_iButtons & (int) EButtonState.IN_DUCK) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_DUCK;
-        }
-
-        public bool Forward
-        {
-            get => (m_iButtons & (int) EButtonState.IN_FORWARD) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_FORWARD;
-        }
-
-        public bool Right
-        {
-            get => (m_iButtons & (int) EButtonState.IN_MOVERIGHT) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_MOVERIGHT;
-        }
-
-        public bool Left
-        {
-            get => (m_iButtons & (int) EButtonState.IN_MOVELEFT) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_MOVELEFT;
-        }
-
-        public bool Back
-        {
-            get => (m_iButtons & (int) EButtonState.IN_BACK) != 0;
-            set => m_iButtons &= ~(int) EButtonState.IN_BACK;
-        }
+        
     };
 }

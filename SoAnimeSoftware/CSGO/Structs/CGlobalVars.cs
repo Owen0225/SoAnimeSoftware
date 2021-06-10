@@ -44,7 +44,7 @@ namespace SoAnimeSoftware.CSGO.Structs
         public static int tick;
         public static CUserCmd* lastCmd;
 
-        public float servertime(CUserCmd* cmd)
+        public int ServerTick(CUserCmd* cmd)
         {
             if (cmd != null)
             {
@@ -60,7 +60,12 @@ namespace SoAnimeSoftware.CSGO.Structs
                 lastCmd = cmd;
             }
 
-            return tick * interval_per_tick;
+            return tick;
+        }
+
+        public float ServerTime(CUserCmd* cmd)
+        {
+            return ServerTick(cmd) * interval_per_tick;
         }
     }
 }

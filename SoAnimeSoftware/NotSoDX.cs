@@ -56,14 +56,6 @@ namespace SoAnimeSoftware
 
         private void worldColorCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (worldColorCheckBox.Checked)
-            {
-                Settings.worldColoring = Status.ENABLED;
-            }
-            else
-            {
-                Settings.worldColoring = Status.DISABLED;
-            }
 
             Settings.worldColoring = worldColorCheckBox.Checked ? Status.ENABLED : Status.DISABLED;
             Hack.Misc.Checks.needUpdate = true;
@@ -141,6 +133,7 @@ namespace SoAnimeSoftware
         {
             Settings.asusProp = asusTrackBar.Value / 255f;
             Settings.worldColoring = Status.ENABLED;
+            Hack.Misc.Checks.needUpdate = true;
         }
         
 
@@ -610,6 +603,11 @@ namespace SoAnimeSoftware
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             Settings.backTrackLT = checkBox1.Checked;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            MovementManager.Replays.Refresh();
         }
     }
 }

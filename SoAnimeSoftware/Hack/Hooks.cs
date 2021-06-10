@@ -240,14 +240,10 @@ namespace SoAnimeSoftware.Hack
 
             if (cmd == null || cmd->m_iCmdNumber == 0 || !SDK.Engine.IsInGame())
                 return result;
-
-
+            
             SendPackets = (byte*) (Memory.ReadPointer(_ebpPtr) - 0x1c);
 
-            if (Input.KeyDown(System.Windows.Forms.Keys.H))
-                *SendPackets = 0;
-
-            SDK.GlobalVars->servertime(cmd);
+            SDK.GlobalVars->ServerTime(cmd);
 
             MovementManager.NeedAttack = (cmd->m_iButtons & (int) EButtonState.IN_ATTACK) != 0;
             TeamDamageTracker.OverlayDrawing = (cmd->m_iButtons & (int) EButtonState.IN_SCORE) != 0;
@@ -359,6 +355,12 @@ namespace SoAnimeSoftware.Hack
         {
             if (!SDK.Engine.IsInGame())
                 Misc.Other.AutoAccept(data.soundEntry->ToString());
+
+            /*
+            var sound = data.soundEntry->ToString();
+            if (sound.Contains("SuitLand") || sound.Contains("stepleft"))
+                return;
+                */
 
             EmitSoundRawHook.O(data);
         }

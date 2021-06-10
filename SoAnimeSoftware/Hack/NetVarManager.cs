@@ -2,18 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SoAnimeSoftware.CSGO.Structs;
-using SoAnimeSoftware.CSGO;
-using System.Security.Policy;
-using System.Runtime.CompilerServices;
-using System.Reflection;
-using System.Windows.Markup;
-using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
+using SoAnimeSoftware.CSGO;
+using SoAnimeSoftware.CSGO.Structs;
+using SoAnimeSoftware.Utils;
 
-namespace SoAnimeSoftware.Utils
+namespace SoAnimeSoftware.Hack
 {
     public unsafe static class NetVarManager
     {

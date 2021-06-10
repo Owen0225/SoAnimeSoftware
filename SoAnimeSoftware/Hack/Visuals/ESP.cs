@@ -60,10 +60,10 @@ namespace SoAnimeSoftware.Hack.Visuals
 
         public static void BacktrackBox(int index, Entity* e)
         {
-            if (!Settings.backtrack || !Settings.backTrackLT)
+            if (!Settings.backtrack || !Settings.backTrackLT || !Settings.aimbot)
                 return;
 
-            if (e->IsDormant() || !e->IsAlive())
+            if (e->IsDormant() || !e->IsAlive() || !SDK.g_LocalPlayer()->IsAlive())
                 return;
 
             if (index < 0 || index >= TargetList.Targets.Length || TargetList.Targets[index] == null)
