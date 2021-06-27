@@ -24,13 +24,24 @@ namespace SoAnimeSoftware.CSGO
         public delegate void FinishTrackPredictionErrorsDlg(IntPtr ptr, Entity* player);
 
         public FinishTrackPredictionErrorsDlg _FinishTrackPredictionErrors;
+        
+        [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
+        public delegate void ResetDlg(IntPtr ptr);
+
+        public ResetDlg _Reset;
 
 
         public IGameMovement(IntPtr Address) : base(Address)
         {
+            _Reset =  GetInterfaceFunction<ResetDlg>(2);
             _ProcessMovement = GetInterfaceFunction<ProcessMovementDlg>(1);
             _StartTrackPredictionErrors = GetInterfaceFunction<StartTrackPredictionErrorsDlg>(3);
             _FinishTrackPredictionErrors = GetInterfaceFunction<FinishTrackPredictionErrorsDlg>(4);
+        }
+
+        public void Reset()
+        {
+            _Reset(Address);
         }
 
         public void ProcessMovement(Entity* localPlayer, CMoveData* moveData)

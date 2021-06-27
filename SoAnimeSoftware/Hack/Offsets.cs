@@ -66,6 +66,10 @@ namespace SoAnimeSoftware.Hack
         public static IntPtr GetItemSchemaPointer = Memory.FindPattern("client.dll", "A1 ? ? ? ? 85 C0 75 53");
 
         public static IntPtr ClearCustomMaterialsPointer = Memory.Dereference( Memory.FindPattern("client.dll", "E8 ? ? ? ? 51 6A 26"),1);
+
+        public static IntPtr PredictionHost = Memory.FindPattern("client.dll", "89 35 ? ? ? ? F3 0F 10 48") + 2;
+
+        public static IntPtr off_3BFB61DC = Memory.FindPattern("client.dll", "55 8B EC 83 EC 10 53 56 57 8B F9 8B 87");
         
         public static class DT_TestTraceline
         {

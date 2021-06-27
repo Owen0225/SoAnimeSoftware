@@ -129,6 +129,8 @@ namespace SoAnimeSoftware.CSGO
 
             game_mode = CVar.FindVar("game_mode");
             game_type = CVar.FindVar("game_type");
+            
+            Log.Debug( "Engine",Engine.Address);
         }
 
         public static Entity* g_LocalPlayer() => *(Entity**) Offsets.LocalPlayer;

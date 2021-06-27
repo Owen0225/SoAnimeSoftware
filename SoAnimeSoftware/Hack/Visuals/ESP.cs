@@ -58,9 +58,11 @@ namespace SoAnimeSoftware.Hack.Visuals
             }
         }
 
+        public static DrawList backtrackTrace = new DrawList();
+        
         public static void BacktrackBox(int index, Entity* e)
         {
-            if (!Settings.backtrack || !Settings.backTrackLT || !Settings.aimbot)
+            if (!Settings.backtrack || !Settings.backTrackLT)
                 return;
 
             if (e->IsDormant() || !e->IsAlive() || !SDK.g_LocalPlayer()->IsAlive())
@@ -75,11 +77,11 @@ namespace SoAnimeSoftware.Hack.Visuals
 
             if (target.Ticks.First == null)
                 return;
-
+            
             var pos = ExtraMath.GetBonePosition(target.Ticks.First.Value.Matrix, 8);
 
             Vector dst = new Vector();
-
+            
             if (ExtraMath.WorldToScreen(pos, ref dst))
             {
                 var color = e->IsEnemy() ? Settings.enemyEsp : Settings.teamEsp;
@@ -242,7 +244,7 @@ namespace SoAnimeSoftware.Hack.Visuals
                 if (!valid)
                     return false;
 
-                if (vanishing && opacity > 0) // зависит от фпс, зато красиво
+                if (vanishing && opacity > 0)
                 {
                     opacity -= 5;
                     if (opacity == 0)

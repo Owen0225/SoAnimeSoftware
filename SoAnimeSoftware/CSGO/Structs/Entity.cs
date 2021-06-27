@@ -393,6 +393,20 @@ namespace SoAnimeSoftware.CSGO.Structs
             }
         }
 
+        // sub_3BDCA4D0
+        
+        [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
+        public delegate void sub_3BDCA4D0Dlg(Entity* ptr);
+
+        public void sub_3BDCA4D0()
+        {
+            fixed (Entity* ptr = &this)
+            {
+                Memory.GetVTableFunction<sub_3BDCA4D0Dlg>((IntPtr) ptr, 317)(ptr);
+            }
+        }
+        
+        
         [UnmanagedFunctionPointer(CallingConvention.ThisCall)]
         public delegate void UpdateAccuracyPenaltyDlg(Entity* ptr);
 

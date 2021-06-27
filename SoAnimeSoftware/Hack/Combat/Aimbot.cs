@@ -35,15 +35,14 @@ namespace SoAnimeSoftware.Hack.Combat
 
         public static void Run(CUserCmd* cmd)
         {
-            if (!Settings.aimbot)
+            if (!Settings.aimbot && !Settings.backtrack)
                 return;
 
             aiming = false;
 
             if ((cmd->m_iButtons & (int) EButtonState.IN_ATTACK) == 0)
                 return;
-
-
+            
             var activeWeapon = SDK.g_LocalPlayer()->GetActiveWeapon();
             if (activeWeapon == null)
                 return;
@@ -75,6 +74,9 @@ namespace SoAnimeSoftware.Hack.Combat
                 return;
 
             cmd->m_iTickCount = Backtrack.TimeToTicks(tick.Simtime + Backtrack.interpolation_time);
+
+            if (!Settings.aimbot)
+                return;
 
             aim.NormalizeAngle();
 
@@ -277,8 +279,8 @@ namespace SoAnimeSoftware.Hack.Combat
             if (!Settings.autoStop)
                 return;
 
-            var direction = EnginePrediction.preVelocity.ToAngle();
-            float speed = EnginePrediction.preVelocity.Length2D;
+            var direction = EnginePrediction.Velocity.ToAngle();
+            float speed = EnginePrediction.Velocity.Length2D;
 
             direction.Y = cmd->m_vecViewAngles.Y - direction.Y;
 

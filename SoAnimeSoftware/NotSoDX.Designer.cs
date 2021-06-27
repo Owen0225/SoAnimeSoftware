@@ -869,7 +869,7 @@
             // rankRevealCheckBox
             // 
             this.rankRevealCheckBox.AutoSize = true;
-            this.rankRevealCheckBox.Location = new System.Drawing.Point(6, 376);
+            this.rankRevealCheckBox.Location = new System.Drawing.Point(6, 350);
             this.rankRevealCheckBox.Name = "rankRevealCheckBox";
             this.rankRevealCheckBox.Size = new System.Drawing.Size(84, 17);
             this.rankRevealCheckBox.TabIndex = 30;
@@ -882,7 +882,7 @@
             this.autoAcceptCheckBox.AutoSize = true;
             this.autoAcceptCheckBox.Checked = true;
             this.autoAcceptCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.autoAcceptCheckBox.Location = new System.Drawing.Point(6, 353);
+            this.autoAcceptCheckBox.Location = new System.Drawing.Point(6, 327);
             this.autoAcceptCheckBox.Name = "autoAcceptCheckBox";
             this.autoAcceptCheckBox.Size = new System.Drawing.Size(84, 17);
             this.autoAcceptCheckBox.TabIndex = 29;
@@ -893,7 +893,7 @@
             // morgenCheckBox
             // 
             this.morgenCheckBox.AutoSize = true;
-            this.morgenCheckBox.Location = new System.Drawing.Point(6, 330);
+            this.morgenCheckBox.Location = new System.Drawing.Point(6, 304);
             this.morgenCheckBox.Name = "morgenCheckBox";
             this.morgenCheckBox.Size = new System.Drawing.Size(88, 17);
             this.morgenCheckBox.TabIndex = 27;
@@ -904,7 +904,7 @@
             // flashReduceCheckBox
             // 
             this.flashReduceCheckBox.AutoSize = true;
-            this.flashReduceCheckBox.Location = new System.Drawing.Point(6, 307);
+            this.flashReduceCheckBox.Location = new System.Drawing.Point(6, 281);
             this.flashReduceCheckBox.Name = "flashReduceCheckBox";
             this.flashReduceCheckBox.Size = new System.Drawing.Size(87, 17);
             this.flashReduceCheckBox.TabIndex = 25;
@@ -915,7 +915,7 @@
             // spectatorListCheckBox
             // 
             this.spectatorListCheckBox.AutoSize = true;
-            this.spectatorListCheckBox.Location = new System.Drawing.Point(6, 284);
+            this.spectatorListCheckBox.Location = new System.Drawing.Point(6, 258);
             this.spectatorListCheckBox.Name = "spectatorListCheckBox";
             this.spectatorListCheckBox.Size = new System.Drawing.Size(87, 17);
             this.spectatorListCheckBox.TabIndex = 24;
@@ -937,7 +937,7 @@
             // edgeJumpCheckBox
             // 
             this.edgeJumpCheckBox.AutoSize = true;
-            this.edgeJumpCheckBox.Location = new System.Drawing.Point(6, 261);
+            this.edgeJumpCheckBox.Location = new System.Drawing.Point(6, 235);
             this.edgeJumpCheckBox.Name = "edgeJumpCheckBox";
             this.edgeJumpCheckBox.Size = new System.Drawing.Size(92, 17);
             this.edgeJumpCheckBox.TabIndex = 22;
@@ -948,8 +948,7 @@
             // autoStrafeCheckBox
             // 
             this.autoStrafeCheckBox.AutoSize = true;
-            this.autoStrafeCheckBox.Enabled = false;
-            this.autoStrafeCheckBox.Location = new System.Drawing.Point(6, 238);
+            this.autoStrafeCheckBox.Location = new System.Drawing.Point(673, 422);
             this.autoStrafeCheckBox.Name = "autoStrafeCheckBox";
             this.autoStrafeCheckBox.Size = new System.Drawing.Size(77, 17);
             this.autoStrafeCheckBox.TabIndex = 20;

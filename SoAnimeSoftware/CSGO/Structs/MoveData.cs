@@ -8,14 +8,13 @@ namespace SoAnimeSoftware.CSGO.Structs
 {
     public unsafe struct CMoveData
     {
-        // пиздато согласен
         public byte m_bFirstRunOfFunctions;
         public byte m_bGameCodeMovedPlayer;
         public int m_nPlayerHandle; // edict index on server, client entity handle on client=
         public int m_nImpulseCommand; // Impulse command issued.
         public Vector m_vecViewAngles; // Command view angles (local space)
         public Vector m_vecAbsViewAngles; // Command view angles (world space)
-        public int m_nButtons; // Attack buttons.
+        public uint m_nButtons; // Attack buttons.
         public int m_nOldButtons; // From host_client->oldbuttons;
         public float m_flForwardMove;
         public float m_flSideMove;

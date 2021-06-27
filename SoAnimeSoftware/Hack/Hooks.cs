@@ -234,13 +234,14 @@ namespace SoAnimeSoftware.Hack
 
         public static byte CreateMoveHooked(IntPtr thisPtr, float flInputSampleTime, CUserCmd* cmd)
         {
+            cmd->m_vecViewAngles.Clamp();
             var result = CreateMoveRawHook.O(thisPtr, flInputSampleTime, cmd);
             if (result == 0)
                 return 0;
 
             if (cmd == null || cmd->m_iCmdNumber == 0 || !SDK.Engine.IsInGame())
                 return result;
-            
+
             SendPackets = (byte*) (Memory.ReadPointer(_ebpPtr) - 0x1c);
 
             SDK.GlobalVars->ServerTime(cmd);
@@ -269,6 +270,11 @@ namespace SoAnimeSoftware.Hack
                 MovementManager.HandleInput(cmd);
                 Movement.PropAutoStrafe(cmd);
 
+                var realVelocity = SDK.g_LocalPlayer()->m_vecVelocity;
+                var realFlag = SDK.g_LocalPlayer()->m_fFlags;
+                
+                // EnginePrediction.Save();
+                
                 EnginePrediction.Start(cmd);
                 Backtrack.GetNetDelays(cmd->m_iTickCount);
 
@@ -281,18 +287,16 @@ namespace SoAnimeSoftware.Hack
                     Log.Error(ex.ToString());
                 }
                 
-                
-
                 Movement.JumpBug(cmd);
 
                 EnginePrediction.Finish(cmd);
+                var calc = realVelocity.Z + SDK.GlobalVars->interval_per_tick * (-Movement.Gravity);
 
                 //Hack.Misc.Movement.EdgeBugTracker(cmd);
                 Movement.EdgeJump(cmd);
                 Movement.PreJump(cmd);
-
+                // Movement.EdgeBug(cmd, realVelocity, realFlag);
                 
-
                 try
                 {
                     Aimbot.Run(cmd);

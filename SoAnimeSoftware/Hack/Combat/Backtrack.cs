@@ -21,6 +21,7 @@ namespace SoAnimeSoftware.Hack.Combat
         public static CConVar* sv_client_min_interp_ratio;
         public static CConVar* sv_client_max_interp_ratio;
         public static CConVar* sv_maxunlag;
+        
 
         public static void GetNetDelays(int tick_count)
         {

@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using SoAnimeSoftware.CSGO;
@@ -14,11 +16,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text.RegularExpressions;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Runtime.Remoting.Messaging;
 using System.Windows.Forms;
 using SoAnimeSoftware.Utils;
 using static SoAnimeSoftware.Utils.ExtraMath;
 using static SoAnimeSoftware.CSGO.EMoveType;
 using static SoAnimeSoftware.CSGO.EEntityFlags;
+using Vector = SoAnimeSoftware.CSGO.Structs.Vector;
 
 
 namespace SoAnimeSoftware.Hack.Misc
@@ -115,8 +119,8 @@ namespace SoAnimeSoftware.Hack.Misc
             if ((SDK.g_LocalPlayer()->m_fFlags & (int) EEntityFlags.FL_ONGROUND) == 0)
                 return;
 
-            var direction = EnginePrediction.preVelocity.ToAngle();
-            float speed = EnginePrediction.preVelocity.Length2D;
+            var direction = EnginePrediction.Velocity.ToAngle();
+            float speed = EnginePrediction.Velocity.Length2D;
 
             if (speed <= 15)
                 return;
@@ -156,7 +160,7 @@ namespace SoAnimeSoftware.Hack.Misc
                 return;
 
 
-            if ((EnginePrediction.preFlags & (int) EEntityFlags.FL_ONGROUND) != 0 &&
+            if ((EnginePrediction.Flags & (int) EEntityFlags.FL_ONGROUND) != 0 &&
                 (SDK.g_LocalPlayer()->m_fFlags & (int) EEntityFlags.FL_ONGROUND) == 0)
             {
                 cmd->m_iButtons |= (int) EButtonState.IN_JUMP;
@@ -197,7 +201,7 @@ namespace SoAnimeSoftware.Hack.Misc
                 cmd->m_iButtons &= ~(int) EButtonState.IN_DUCK;
                 _jbugging = false;
             }
-            else if ((EnginePrediction.preFlags & (int) EEntityFlags.FL_ONGROUND) == 0 &&
+            else if ((EnginePrediction.Flags & (int) EEntityFlags.FL_ONGROUND) == 0 &&
                      (SDK.g_LocalPlayer()->m_fFlags & (int) EEntityFlags.FL_ONGROUND) != 0)
             {
                 _jbugging = true;
@@ -283,14 +287,39 @@ namespace SoAnimeSoftware.Hack.Misc
             if (!Settings.autoStrafe)
                 return;
 
-            if (Settings.autoStrafeOnJump)
-                if (!Input.KeyDown(Keys.Space))
-                    return;
-
-            // removed
+            //removed
         }
 
         public static CConVar* sv_accelerate;
         public static CConVar* sv_maxspeed;
+        public static CConVar* sv_gravity = null;
+
+        public static float Gravity
+        {
+            get
+            {
+                if (sv_gravity == null)
+                {
+                    sv_gravity = SDK.CVar.FindVar("sv_gravity");
+                }
+
+                return sv_gravity->GetFloat();
+            }
+        }
+
+
+        public static bool crouch = false;
+        public static bool eb_found = false;
+        public static bool next = false;
+        public static int tick_before_eb = 0;
+        public static int saved_tickcount_2 = 0;
+        public static Vector va = new Vector();
+        public static bool lastTimeOnGround;
+
+
+        public static void EdgeBug(CUserCmd* cmd, Vector realVelocity, int realFlag)
+        {
+            // there were attempts to reproduce what was in clarity, but the predication is not yet ready
+        }
     }
 }
