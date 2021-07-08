@@ -46,11 +46,13 @@ namespace SoAnimeSoftware.Hack
         public static byte* DisablePostprocessing =
             *(byte**) (Memory.FindPattern("client.dll", "83 EC 4C 80 3D") + 5);
 
+        /*  
         public static IntPtr DxPresentPointer =
             Memory.FindPattern("gameoverlayrenderer.dll", "FF 15 ? ? ? ? 8B F8 85 DB") + 2;
 
         public static IntPtr DxResetPointer =
             Memory.FindPattern("gameoverlayrenderer.dll", "C7 45 ? ? ? ? ? FF 15 ? ? ? ? 8B F8") + 9;
+        */
 
         public static IntPtr D39DevicePointer =
             Memory.ReadPointer(

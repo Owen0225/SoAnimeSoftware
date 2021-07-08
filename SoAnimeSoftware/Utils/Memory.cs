@@ -96,6 +96,8 @@ namespace SoAnimeSoftware.Utils
                     }
                 }
             }
+            
+            Log.Error($"Warning! {signature} broke.");
 
             return IntPtr.Zero;
         }

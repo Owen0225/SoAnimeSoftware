@@ -8,6 +8,7 @@ namespace SoAnimeSoftware.CSGO.Structs
 {
     public unsafe struct GlowObjectDefinition
     {
+        public int nextFreeSlot;
         public Entity* entity;
         public FloatColor glowColor;
         public float glowAlpha;
@@ -21,7 +22,6 @@ namespace SoAnimeSoftware.CSGO.Structs
         public int fullBloomStencilTestValue;
         public int glowStyle;
         public int splitScreenSlot;
-        public int nextFreeSlot;
 
         public bool IsUnused()
         {
@@ -48,7 +48,7 @@ namespace SoAnimeSoftware.CSGO.Structs
             return _fullBloomRender == 1;
         }
 
-        static int END_OF_FREE_LIST = -1;
-        static int ENTRY_IN_USE = -2;
+        private static readonly int END_OF_FREE_LIST = -1;
+        private static readonly int ENTRY_IN_USE = -2;
     }
 }

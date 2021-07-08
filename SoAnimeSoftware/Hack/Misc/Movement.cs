@@ -287,7 +287,7 @@ namespace SoAnimeSoftware.Hack.Misc
             if (!Settings.autoStrafe)
                 return;
 
-            //removed
+            // removed
         }
 
         public static CConVar* sv_accelerate;
